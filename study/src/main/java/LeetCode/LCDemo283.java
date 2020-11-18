@@ -2,6 +2,7 @@ package LeetCode;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -21,6 +22,7 @@ public class LCDemo283 {
     public void demo283() {
         int[] a = new int[]{4, 2, 4, 0, 0, 3, 0, 5, 1, 0};
         moveZeroes1(a);
+        new ArrayList<>();
         System.out.println(Arrays.toString(Arrays.stream(a).toArray()));
     }
 
