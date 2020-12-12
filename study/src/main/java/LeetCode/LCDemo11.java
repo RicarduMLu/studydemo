@@ -1,6 +1,15 @@
 package LeetCode;
 
-import org.junit.jupiter.api.Test;
+import com.alibaba.fastjson.JSONArray;
+import domain.FreeGiveSyncFamilyMemberRequestDTO;
+import com.alibaba.fastjson.JSON;
+import org.junit.Test;
+import org.apache.commons.collections.CollectionUtils;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 最多水的容器
@@ -20,9 +29,46 @@ public class LCDemo11 {
         //
 
         //暴力解法，把能够顺序达到的所有值拿到，扔出最大的
-        int[] a = new int[]{2, 3, 4, 5, 18, 17, 6};
-        int i = maxArea3(a);
-        System.out.println(i);
+//        int[] a = new int[]{2, 3, 4, 5, 18, 17, 6};
+//        int i = maxArea3(a);
+//        System.out.println(i);
+
+
+    }
+
+    public static void main(String[] args) {
+//        ArrayList<FreeGiveSyncFamilyMemberRequestDTO> freeGiveSyncFamilyMemberRequestDTOS = new ArrayList<>();
+//        FreeGiveSyncFamilyMemberRequestDTO freeGiveSyncFamilyMemberRequestDTO = new FreeGiveSyncFamilyMemberRequestDTO();
+//        freeGiveSyncFamilyMemberRequestDTO.setPolicyNo("1");
+//        freeGiveSyncFamilyMemberRequestDTOS.add(freeGiveSyncFamilyMemberRequestDTO);
+//        List<FreeGiveSyncFamilyMemberRequestDTO> collect = freeGiveSyncFamilyMemberRequestDTOS.stream().filter(member -> member.getPolicyNo() != "1")
+//                .collect(Collectors.toList());
+//        System.out.println(JSON.toJSONString(collect));
+//       if (CollectionUtils.isNotEmpty(collect)){
+//            System.out.println( 1111);
+//
+//        }else {
+//           System.out.println( 2222);
+//
+//       }
+        String str = "[\"自驾车意外:500000\"]";
+        try {
+            JSONArray objects = JSON.parseArray(str);
+            BigDecimal bigDecimal = new BigDecimal(0);
+            for (Object object : objects) {
+                String s = object.toString();
+                System.out.println(s);
+                if (s.contains(":")) {
+                    String[] split = s.split(":");
+                    BigDecimal bigDecimal1 = new BigDecimal(split[1]);
+                    bigDecimal.add(bigDecimal1);
+                }
+            }
+            System.out.println(bigDecimal);
+        } catch (Exception ex) {
+            System.out.println(00);
+        }
+
     }
 
     /**
