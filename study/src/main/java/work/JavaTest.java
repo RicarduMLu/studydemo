@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
+import utils.FileUrlUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,10 +17,7 @@ public class JavaTest {
         System.out.println();
         System.out.println();
         boolean innerFlag = false;
-//        JSONObject jsonObject = JSON.parseObject(TestConstants.fileUrls16590);
-        JSONObject jsonObject = JSON.parseObject(TestConstants.fileUrls16590免责);
-        JSONObject data = (JSONObject) jsonObject.get("data");
-        JSONArray parseArray = JSON.parseArray(JSON.toJSONString(data.get("fileUrlList")));
+        JSONArray parseArray = FileUrlUtils.getUrl(TestConstants.fileUrls16590免责);
         for (int i = 0; i < parseArray.size(); i++) {
             Object fileUrlList = parseArray.get(i);
             JSONObject url = (JSONObject) fileUrlList;
@@ -41,10 +39,8 @@ public class JavaTest {
         System.out.println();
         System.out.println();
         boolean innerFlag = true;
-        JSONObject jsonObject = JSON.parseObject(TestConstants.fileTemplate2);
-//        JSONObject jsonObject = JSON.parseObject(TestConstants.fileTemplate);
-        JSONObject data = (JSONObject) jsonObject.get("data");
-        JSONArray parseArray = JSON.parseArray(JSON.toJSONString(data.get("fileUrlList")));
+//        JSONArray parseArray =  FileUrlUtils.getUrl(TestConstants.fileTemplate);
+        JSONArray parseArray =  FileUrlUtils.getUrl(TestConstants.fileTemplate2);
         for (int i = 0; i < parseArray.size(); i++) {
             Object fileUrlList = parseArray.get(i);
             JSONObject url = (JSONObject) fileUrlList;
@@ -105,10 +101,7 @@ public class JavaTest {
         map.put("A1659001", "琴康保");
         HashMap<String, String> map2 = JSON.parseObject(JSON.toJSONString(map), HashMap.class);
 
-        JSONObject jsonObject = JSON.parseObject(TestConstants.fileUrl);
-//        JSONObject jsonObject = JSON.parseObject(TestConstants.fileTemplate);
-        JSONObject data = (JSONObject) jsonObject.get("data");
-        JSONArray parseArray = JSON.parseArray(JSON.toJSONString(data.get("fileUrlList")));
+        JSONArray parseArray =  FileUrlUtils.getUrl(TestConstants.全量图片Url);
         ArrayList<String> pngs = new ArrayList<>();
         for (int i = 0; i < parseArray.size(); i++) {
             Object fileUrlList = parseArray.get(i);
@@ -134,8 +127,11 @@ public class JavaTest {
             if (i < parseArray.size() - 1) {
             }
         }
-        System.out.println("缺失的产品"+JSON.toJSONString(map2));
-        System.out.println("缺失匹配的图片"+JSON.toJSONString(pngs));
+        System.out.println("INSERT INTO `goods_text` ( `goods_code`,   `text_type`, `text_name`, `text_info`, `is_must_read`, `sort`) VALUES \n" +
+                "( 'A1650001',   'REMINDER_URL', '温馨提示', 'https://hq-prd-e-zine.oss-cn-szfinance.aliyuncs.com/agent/prd/agent/2022/06/22/product_1655890071431.png', false,15);\n");
+
+        System.out.println("缺失的产品" + JSON.toJSONString(map2));
+        System.out.println("缺失匹配的图片" + JSON.toJSONString(pngs));
         System.out.println();
 
     }
