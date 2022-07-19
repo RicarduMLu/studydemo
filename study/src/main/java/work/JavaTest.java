@@ -11,6 +11,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JavaTest {
+    @Test
+    public void getUrls() {
+        FileUrlUtils.printUrls(TestConstants.保险条款15180);
+    }
 
     @Test
     public void getUrls4() {
@@ -28,27 +32,7 @@ public class JavaTest {
         System.out.println();
     }
 
-    @Test
-    public void getUrls() {
-        System.out.println();
-        System.out.println();
-        boolean innerFlag = false;
-        JSONArray parseArray = FileUrlUtils.getUrl(TestConstants.fileUrls16590免责);
-        for (int i = 0; i < parseArray.size(); i++) {
-            Object fileUrlList = parseArray.get(i);
-            JSONObject url = (JSONObject) fileUrlList;
-            if (innerFlag) {
-                System.out.print(url.get("innerUrl"));
-            } else {
-                System.out.print(url.get("outerUrl"));
-            }
-            if (i < parseArray.size() - 1) {
-                System.out.print(",");
-            }
-        }
-        System.out.println();
-        System.out.println();
-    }
+
 
     @Test
     public void getUrls2() {
