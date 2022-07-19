@@ -13,6 +13,22 @@ import java.util.Map;
 public class JavaTest {
 
     @Test
+    public void getUrls4() {
+        System.out.println();
+        System.out.println();
+        JSONArray parseArray = FileUrlUtils.getUrl(TestConstants.新免责声明);
+        for (Object o : parseArray) {
+            JSONObject url = (JSONObject) o;
+            // UPDATE `risk_text`  SET text_info  = 'https:' WHERE `text_type` = 'DISCLAIMERS_TEMPLATE'  AND `insurance_company` = 'HQINS'  AND risk_code =  '11010';
+            System.out.print("UPDATE `risk_text`  SET text_info  = '" + url.get("innerUrl") + "' WHERE `text_type` = 'DISCLAIMERS_TEMPLATE'  AND `insurance_company` = 'HQINS'  AND risk_code =  '" + url.get("originalFileName").toString().replace(".pdf","") + "';");
+            System.out.println();
+
+        }
+        System.out.println();
+        System.out.println();
+    }
+
+    @Test
     public void getUrls() {
         System.out.println();
         System.out.println();
@@ -40,7 +56,7 @@ public class JavaTest {
         System.out.println();
         boolean innerFlag = true;
 //        JSONArray parseArray =  FileUrlUtils.getUrl(TestConstants.fileTemplate);
-        JSONArray parseArray =  FileUrlUtils.getUrl(TestConstants.fileTemplate2);
+        JSONArray parseArray = FileUrlUtils.getUrl(TestConstants.fileTemplate2);
         for (int i = 0; i < parseArray.size(); i++) {
             Object fileUrlList = parseArray.get(i);
             JSONObject url = (JSONObject) fileUrlList;
@@ -101,7 +117,7 @@ public class JavaTest {
         map.put("A1659001", "琴康保");
         HashMap<String, String> map2 = JSON.parseObject(JSON.toJSONString(map), HashMap.class);
 
-        JSONArray parseArray =  FileUrlUtils.getUrl(TestConstants.全量图片Url);
+        JSONArray parseArray = FileUrlUtils.getUrl(TestConstants.全量图片Url);
         ArrayList<String> pngs = new ArrayList<>();
         for (int i = 0; i < parseArray.size(); i++) {
             Object fileUrlList = parseArray.get(i);
