@@ -11,9 +11,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JavaTest {
+
     @Test
     public void getUrls() {
-        FileUrlUtils.printUrls(TestConstants.保险条款15180);
+//        HashMap<String, String> objectObjectHashMap = new LinkedHashMap<>();
+//        for (int i = 0; i < 12; i++) {
+//            objectObjectHashMap.put((i + 1)+"", (i + 1) + "月");
+//        }
+//        System.out.println(JSON.toJSONString(objectObjectHashMap));
+
+
+//        FileUrlUtils.printUrlsTogether(TestConstants.保险条款15180);
+        FileUrlUtils.printUrls(TestConstants.BANNER图片组11140);
     }
 
     @Test
