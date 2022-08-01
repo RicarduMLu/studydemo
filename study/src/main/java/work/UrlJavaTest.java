@@ -3,6 +3,7 @@ package work;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import constants.TestConstants;
 import org.junit.Test;
 import utils.FileUrlUtils;
 
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JavaTest {
+public class UrlJavaTest {
 
     @Test
     public void getUrls() {
