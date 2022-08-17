@@ -23,7 +23,11 @@ public class UrlJavaTest {
 
 
 //        FileUrlUtils.printUrlsTogether(TestConstants.保险条款15180);
-        FileUrlUtils.printUrls(TestConstants.BANNER图片组11140);
+//        FileUrlUtils.printUrlsTogether(TestConstants.保险条款15200);
+//        FileUrlUtils.printUrlsTogether(TestConstants.保险条款15210);
+//        FileUrlUtils.printUrlsTogether(TestConstants.保险条款17070);
+        FileUrlUtils.printUrlsTogether(TestConstants.保险条款17090);
+//        FileUrlUtils.printUrls(TestConstants.BANNER图片组11140);
     }
 
     @Test
