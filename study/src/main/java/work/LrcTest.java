@@ -1,85 +1,32 @@
 package work;
 
-import constants.DatePatterns;
 import org.junit.Test;
-import utils.TimeUtil;
+import utils.LrcUtils;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
+import static constants.LrcConstants.*;
 
 public class LrcTest {
-    private String 飞向别人的床 = "[00:00.63]︿☆飞向别人的床☆︿\n" +
-            "[00:01.83]\n" +
-            "[00:02.85]演唱：光光&C.K\n" +
-            "[00:23.65]光光: girl when we kiss\n" +
-            "[00:26.49]girl when we touch\n" +
-            "[01:37.76][00:29.28]彼此都会感到多愉快\n" +
-            "[01:43.46][00:35.01]could u remember da happy time\n" +
-            "[01:46.36][00:37.90]i never want u say goodbye\n" +
-            "[01:49.17][00:40.78]只记得那夜你曾说爱我forever\n" +
-            "[01:54.77][00:46.44]oh我真的真的不想你离开\n" +
-            "[01:59.47][00:51.46]我们就快要完蛋\n" +
-            "[02:02.96][00:54.56]我还想和你做\n" +
-            "[02:04.34][00:55.89]还想和你做\n" +
-            "[02:06.29][00:57.80]crazy的那个夜晚你真的太厉害\n" +
-            "[02:10.84][01:02.37]所以还想再重来\n" +
-            "[02:14.34][01:05.96]我还想再重来\n" +
-            "[02:15.82][01:07.34]还想再重来\n" +
-            "[01:32.00]\n" +
-            "[01:32.24]c.k: boy when we kiss\n" +
-            "[01:34.95]boy when we touch\n" +
-            "[01:55.18]\n" +
-            "[02:17.48][01:09.02]baby怎么会这样\n" +
-            "[02:20.17][01:11.56]再也不能睡同床\n" +
-            "[02:22.86][01:14.40]寂寞的我怎么度过夜\n" +
-            "[02:28.62][01:20.15]你有自己的立场\n" +
-            "[02:31.53][01:22.98]可是怎么才 能够阻挡\n" +
-            "[02:36.95][01:28.47]别飞向别人的床\n" +
-            "[02:40.62]光光:我想你知道的我是真的有多么的爱你\n" +
-            "[02:42.83]但是对我来说你的离开是我一生最大的败笔\n" +
-            "[02:46.16]如果能够 如果能够再次和你一起对待这份感情\n" +
-            "[02:48.83]我想我会用尽一生时间不会喊停\n" +
-            "[02:51.68]和你在一起那段时间回忆挥之不去\n" +
-            "[02:54.29]这种感觉好象藕断丝连始终来之不易\n" +
-            "[02:57.13]我求你别再求我把你忘记\n" +
-            "[02:59.12]让我放弃你是我的上帝\n" +
-            "[03:01.13]说忘记没创意是放屁\n" +
-            "[03:03.43]\n" +
-            "[03:03.50]c.k: 枕着他的臂弯想念你吻的柔软\n" +
-            "[03:05.80]那晚你给的触感\n" +
-            "[03:07.13]穿过我的身体 我为你而存在\n" +
-            "[03:09.39]你懂我的寂寞懂我想要的温暖\n" +
-            "[03:11.50]没了你在身边 就连空气都变得孤单\n" +
-            "[03:14.03]你说如果没有爱情就请放开手 你知道那样谈何容易\n" +
-            "[03:18.70]能不能 能不能还有次机会让我现在才说想你\n" +
-            "[03:22.15]难道不能抛开所有伤心一直跟我一起 不离弃\n" +
-            "[03:26.57](Hello)我知道爱是fantasy (你要等我……)\n" +
-            "[03:29.52]爱你是否还来得及 (不要走好不好?)\n" +
-            "[03:32.19]说到底做错的是我还是你 (我不喜欢他……)\n" +
-            "[03:38.14]我的欲望你能懂 (可那是没有办法的啊……)\n" +
-            "[03:40.85]我的身体给你碰 (宝贝，我好想你……)\n" +
-            "[03:45.69]只有你能让我如此冲动\n" +
-            "[03:48.89]baby怎么会这样 (你说过等我的……)\n" +
-            "[03:51.60]再也不能睡同床 (可不可以不选?)\n" +
-            "[03:54.27]寂寞的我怎么度过夜……\n" +
-            "[04:00.11]你有自己的立场 (宝贝，我好想你……)\n" +
-            "[04:02.88]可是怎么才 能够阻挡\n" +
-            "[04:08.40]别飞向别人的床";
+
 
     @Test
     public void lrc01() {
-        for (String lrc : 飞向别人的床.split("\n")) {
-            String[] split = lrc.split("]");
-            for (int i = 0; i < split.length; i++) {
-                if (split[i].contains("[")) {
-                    System.out.print("["+TimeUtil.format(TimeUtil.addTime(TimeUtil.parseDate(split[i].replace("[", "")+"0", DatePatterns.MM_SS_SSS),-500, ChronoUnit.MILLIS ), DatePatterns.MM_SS_SS)+"]");
-                }else {
-                    System.out.print(split[i]);
-                }
-            }
-            System.out.println();
-        }
+        LrcUtils.lrc(飞向别人的床, -500);
     }
+
+    @Test
+    public void lrc02() {
+        LrcUtils.lrc(rightNow, 1000);
+    }
+    @Test
+    public void lrc03() {
+        LrcUtils.lrc(hurt, 1000);
+    }
+   @Test
+    public void lrc04() {
+        LrcUtils.lrc(booty_music, 500);
+    }
+
+
+
 
 }
