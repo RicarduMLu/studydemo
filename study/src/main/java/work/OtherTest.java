@@ -6,7 +6,7 @@ import constants.TestConstants;
 import org.junit.Test;
 import utils.FileUrlUtils;
 
-public class UrlJavaTest01 {
+public class OtherTest {
     private static String nacos1 = "    PERSONAL_INFORMATION_PROCESSING_AUTHORIZATION: ";
     private static String nacos2 = "    PERSONAL_INFORMATION_PROCESSING_AUTHORIZATION_OUT: ";
     private static String nacos3 = "    #个人信息处理授权协议 签字版";
@@ -14,6 +14,23 @@ public class UrlJavaTest01 {
     private static String nacos4 = "    #个人信息处理授权协议 千里眼PDF版";
     private static String nacos4_2 = "    911201_PDF_";
 
+
+    @Test
+    public void getUrls22() {
+        String sql = "INSERT INTO `goods_rule_relation_info` (`goods_code`, `risk_code`, `plan_code`, `rule_relation_code`, `main_content_type`, `main_rule_type`, `main_content_control_scope`, `main_rule_control_type`, `content_type`, `control_rule_type`, `rule_control_type`, `control_scope`, `default_info`) VALUES ( 'A1419001', '16480', '', 'A1419001_1', '', 'PAY_YEAR', '{\\\"scopeMap\\\":{XXXXXXX}}', 'ENUMERATION', '', 'RECOGNIZE_AGE', 'SCOPE', '{\\\"maxScope\\\":AGEE,\\\"maxScopeUnit\\\":\\\"AGE\\\"}', 'DEFAULT');";
+        //交至59周岁  投保人最小16 周岁 最多交费43年
+        for (int i = 8; i <44; i++) {
+
+            System.out.print(sql
+                    .replace("XXXXXXX", "\\\"" + i + "\\\":\\\"" + i + "年\\\"")
+                    .replace("AGEE", (70 - i) + "")
+                    .replace("DEFAULT", (70 - i) > 30 ? "30" : (70 - i - 1) + "")
+            );
+            if (i < 58) {
+                System.out.println("");
+            }
+        }
+    }
 
     @Test
     public void getUrls2() {
@@ -273,6 +290,7 @@ public class UrlJavaTest01 {
 
         System.out.println();
     }
+
     @Test
     public void test0003() {
         String sql1 =

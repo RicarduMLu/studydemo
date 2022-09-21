@@ -3,6 +3,135 @@ package constants;
 public class LrcConstants {
 
     public static
+    String Slowly =
+            "[00:00.00]Let Me Down Slowly\n" +
+                    "[00:06.12]This night is cold in the kingdom 夜晚寒意由此蔓延\n" +
+                    "[00:09.51]I can feel you fade away 你仿佛渐行渐远\n" +
+                    "[00:12.94]From the kitchen to the bathroom sink and 从厨房一直到浴室水槽\n" +
+                    "[00:16.47]Your steps keep me awake 你离开的脚步让我苏醒\n" +
+                    "[00:18.74]Don't cut me down throw me out leave me here to waste 不要让我分崩离析，不要让我形单影只，不要将我随手抛弃\n" +
+                    "[00:22.13]I once was a man with dignity and grace 我曾是有尊严有骄傲的男人\n" +
+                    "[00:25.26]Now I'm slipping through the cracks of your cold embrace 如今已经身陷囹圄，困在你这寒冷且逐渐破碎的拥抱中\n" +
+                    "[00:28.20]So please please 我恳求你\n" +
+                    "[00:31.16]Could you find a way to let me down slowly? 不要让我瞬间落入深渊\n" +
+                    "[00:34.23]A little sympathy I hope you can show me 我祈求得到你残存的一丝善意\n" +
+                    "[00:37.56]If you wanna go then I'll be so lonely 你的离去会让我孤独\n" +
+                    "[00:40.95]If you're leaving baby let me down slowly 如果你一定要离去，请不要让我瞬间落入深渊\n" +
+                    "[00:43.79]Let me down, down 落入深渊\n" +
+                    "[00:45.04]Let me down, down 深不见底\n" +
+                    "[00:46.29]Let me down, let me down 落入深渊\n" +
+                    "[00:47.92]Down, let me down down 无所适从\n" +
+                    "[00:49.55]Let me down 落入深渊\n" +
+                    "[00:50.50]If you wanna go then I'll be so lonely 你的离去会让我孤独\n" +
+                    "[00:54.01]If you're leaving baby let me down slowly 如果你一定要离去，请不要让我瞬间落入深渊\n" +
+                    "[00:58.03]I hold on to little pieces of what we were 我守护着我们曾经的点点滴滴\n" +
+                    "[01:04.00]I know you're long gone 我知道一切都已逝去，但请接受吧\n" +
+                    "[01:05.91]but take it easy because it hurts 因为痛苦终将来临\n" +
+                    "[01:09.61]Don't cut me down, throw me out, leave me here to waste 不要让我分崩离析，不要让我形单影只，不要将我随手抛弃\n" +
+                    "[01:13.58]I once was a girl with dignity and grace 我曾是优雅而知性的女子\n" +
+                    "[01:16.34]Now I'm slipping through the cracks of your cold embrace 如今已经身陷囹圄，困在你这寒冷且逐渐破碎的拥抱中\n" +
+                    "[01:19.54]So please please 我恳求你\n" +
+                    "[01:22.33]Could you find a way to let me down slowly? 不要让我瞬间落入深渊\n" +
+                    "[01:25.72]A little sympathy I hope you can show me 我祈求得到你残存的一丝善意\n" +
+                    "[01:28.80]If you wanna go then I'll be so lonely 你的离去会让我孤独\n" +
+                    "[01:32.04]If you're leaving baby let me down slowly 如果你一定要离去，请不要让我瞬间落入深渊\n" +
+                    "[01:35.02]Let me down, down 落入深渊\n" +
+                    "[01:36.27]Let me down, down 深不见底\n" +
+                    "[01:37.52]Let me down, let me down 落入深渊\n" +
+                    "[01:39.15]Down, let me down down 无所适从\n" +
+                    "[01:40.78]Let me down 落入深渊\n" +
+                    "[01:41.80]If you wanna go then I'll be so lonely 你的离去会让我孤独\n" +
+                    "[01:44.90]If you're leaving baby let me down slowly 如果你一定要离去，请不要让我瞬间落入深渊\n" +
+                    "[01:47.90]And I can't stop myself from falling down 我无法爬出这万丈深渊\n" +
+                    "[01:54.23]And I can't stop myself from falling down 我在不停下落\n" +
+                    "[02:00.60]And I can't stop myself from falling down 我无法从悲伤中走出\n" +
+                    "[02:07.00]And I can't stop myself from falling down 我无法从悲伤中走出\n" +
+                    "[02:13.82]Could you find a way to let me down slowly? 不要让我瞬间落入深渊\n" +
+                    "[02:16.53]A little sympathy I hope you can show me 我祈求得到你残存的一丝善意\n" +
+                    "[02:20.21]If you wanna go then I'll be so lonely 你的离去会让我孤独\n" +
+                    "[02:23.56]If you're leaving baby let me down slowly 如果你一定要离去，请不要让我瞬间落入深渊\n" +
+                    "[02:26.32]Let me down, down 落入深渊\n" +
+                    "[02:27.57]Let me down, down 深不见底\n" +
+                    "[02:28.82]Let me down, let me down 落入深渊\n" +
+                    "[02:30.45]Down, let me down down 无所适从\n" +
+                    "[02:32.08]Let me down 落入深渊\n" +
+                    "[02:33.19]If you wanna go then I'll be so lonely 你的离去会让我孤独\n" +
+                    "[02:36.15]If you're leaving baby let me down slowly (Let me down slowly) 如果你一定要离去，请不要让我瞬间落入深渊（不要让我瞬间落入深渊）\n" +
+                    "[02:39.26]If you wanna go, then I'll be so lonely 如果你一定要离去，请不要让我瞬间落入深渊\n" +
+                    "[02:42.56]If you're leaving, baby let me down slowly 如果你一定要离去，请不要让我瞬间落入深渊" ;
+    public static
+    String Faded =
+            "[00:00.55]Alan Walker - Faded\n" +
+                    "[00:01.32]Written By：Jesper Borgen、Anders Froen、Gunnar Greve、Alan Walker\n" +
+                    "[00:01.32]Composed By：Jesper Borgen、Anders Froen、Gunnar Greve、Alan Walker\n" +
+                    "[00:01.32]Published By：Warner Chappel、Copyright Control、Stellar Songs Ltd.\n" +
+                    "[00:01.32]Performer：Alan Walker\n" +
+                    "[00:01.32]Vocals By：Iselin Solheim\n" +
+                    "[00:01.32]Background Vocals By：Jesper Borgen\n" +
+                    "[00:01.32]Additional Vocal By：Ingrid Helgor Skretting\n" +
+                    "[00:01.32]Producer：Alan Walker、Jesper Borgen、Mood Melodies\n" +
+                    "[00:01.32]Mixing Engineer：Sören Von Malmborg At Basecamp Studios in Stockholm, Sweden\n" +
+                    "[00:01.32]Mastered By：Sören Von Malmborg At Cosmos Mastering in Stockholm, Sweden\n" +
+                    "[00:01.32]Executive Producer：Gunnar Greve\n" +
+                    "[00:01.32]Vocal Engineer：Jesper Borgen\n" +
+                    "[00:01.32]Vocals Produced By：Jesper Borgen、Anders Froen\n" +
+                    "[00:01.32]Repertoire Owner：MER Recordings (Swedish Deal)\n" +
+                    "[00:11.11]You were the shadow to my light 你是我生命之光的一道暗影 如影随形\n" +
+                    "[00:14.06]Did you feel us 你能感受到彼此的存在吗\n" +
+                    "[00:17.96]Another start 又是新的开始\n" +
+                    "[00:19.78]You fade away 你的身影渐行渐远\n" +
+                    "[00:21.77]Afraid our aim is out of sight 唯恐我们的目标变得迷茫\n" +
+                    "[00:24.77]Wanna see us 只希望能看到我们\n" +
+                    "[00:28.82]Alight 活着\n" +
+                    "[00:31.17]Where are you now 你身在何方\n" +
+                    "[00:36.77]Where are you now 你身在何方\n" +
+                    "[00:41.59]Where are you now 你身在何方\n" +
+                    "[00:44.64]Was it all in my fantasy 难道这一切只是我的幻想吗\n" +
+                    "[00:47.38]Where are you now 你身在何方\n" +
+                    "[00:49.97]Were you only imaginary 你真只存于我的幻觉吗\n" +
+                    "[00:54.11]Where are you now 你身在何方\n" +
+                    "[00:57.58]Atlantis 如亚特兰蒂斯般\n" +
+                    "[00:59.35]Under the sea 没于深海\n" +
+                    "[01:01.69]Under the sea 没于深海\n" +
+                    "[01:04.64]Where are you now 你身在何方\n" +
+                    "[01:07.43]Another dream 置于他梦\n" +
+                    "[01:10.82]The monster's running wild inside of me 我的心中仿佛有野兽驰骋般焦虑不安\n" +
+                    "[01:15.17]I'm faded 我憔悴不堪\n" +
+                    "[01:20.12]I'm faded 我憔悴不堪\n" +
+                    "[01:23.92]So lost I'm faded 迷失方向 憔悴不堪\n" +
+                    "[01:30.74]I'm faded 我憔悴不堪\n" +
+                    "[01:34.70]So lost I'm faded 迷失方向 憔悴不堪\n" +
+                    "[01:38.05]These shallow waters never met 那些镜花水月 从未目及\n" +
+                    "[01:40.83]What I needed 我所需的\n" +
+                    "[01:44.65]I'm letting go 只是顺其自然\n" +
+                    "[01:46.33]A deeper dive 深沉海底\n" +
+                    "[01:48.51]Eternal silence of the sea 海底世界永恒的沉寂\n" +
+                    "[01:52.15]I'm breathing 我在呼吸\n" +
+                    "[01:55.87]Alive 依然活着\n" +
+                    "[01:57.75]Where are you now 你身在何方\n" +
+                    "[02:03.12]Where are you now 你身在何方\n" +
+                    "[02:08.60]Under the bright 明亮的灯光下\n" +
+                    "[02:10.48]But faded lights 却已黯然失色\n" +
+                    "[02:11.49]You've set my heart on fire 你让我的心热血沸腾\n" +
+                    "[02:13.99]Where are you now 你身在何方\n" +
+                    "[02:16.79]Where are you now 你身在何方\n" +
+                    "[02:20.12]Another dream 置于他梦\n" +
+                    "[02:21.79]Another dream 置于他梦\n" +
+                    "[02:23.16]Another dream 置于他梦\n" +
+                    "[02:24.33]Another dream 置于他梦\n" +
+                    "[02:31.38]Where are you now 你身在何方\n" +
+                    "[02:34.81]Atlantis 如亚特兰蒂斯般\n" +
+                    "[02:36.69]Under the sea 没于深海\n" +
+                    "[02:39.39]Under the sea 没于深海\n" +
+                    "[02:41.97]Where are you now 你身在何方\n" +
+                    "[02:44.81]Another dream 置于他梦\n" +
+                    "[02:48.17]The monster's running wild inside of me 我的心中仿佛有野兽驰骋般焦虑不安\n" +
+                    "[02:52.75]I'm faded 我憔悴不堪\n" +
+                    "[02:57.42]I'm faded 我憔悴不堪\n" +
+                    "[03:01.28]So lost I'm faded 迷失方向 憔悴不堪\n" +
+                    "[03:07.96]I'm faded 我憔悴不堪\n" +
+                    "[03:11.92]So lost I'm faded 迷失方向 憔悴不堪";
+    public static
     String booty_music =
             "[00:04.23]Booty Music - Git Fresh\n" +
                     "[00:15.70]When the beat goin like that (boom boom)\n" +

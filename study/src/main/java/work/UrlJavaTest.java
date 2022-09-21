@@ -31,6 +31,44 @@ public class UrlJavaTest {
     }
 
     @Test
+    public void getUrls5() {
+        JSONArray parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置产品说明书0921);
+        printUrlsAndNameByArray(parseArray, false);
+        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置人身保险投保提示书0921);
+        printUrlsAndNameByArray(parseArray, false);
+        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置免责声明0921);
+        printUrlsAndNameByArray(parseArray, false);
+        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置条款0921);
+        printUrlsAndNameByArray(parseArray, false);
+
+
+    }
+
+    public static void printUrlsAndNameByArray(JSONArray array, boolean innerFlag) {
+        System.out.println();
+        System.out.println();
+        for (int i = 0; i < array.size(); i++) {
+            Object fileUrlList = array.get(i);
+            JSONObject url = (JSONObject) fileUrlList;
+            Object originalFileName = url.get("originalFileName");
+
+            System.out.print(originalFileName.toString().contains("_") && originalFileName.toString().split("_").length==2 ? originalFileName.toString().split("_")[1].replace(".pdf","") : "人身保险投保提示书");
+            System.out.print("\t");
+            System.out.print(originalFileName.toString().contains("-") ? originalFileName.toString().split("-")[0] : "人身保险投保提示书");
+            System.out.print("\t");
+            System.out.print(originalFileName);
+            System.out.print("\t");
+            if (innerFlag) {
+                System.out.println(url.get("innerUrl"));
+            } else {
+                System.out.println(url.get("outerUrl"));
+            }
+        }
+        System.out.println();
+        System.out.println();
+    }
+
+    @Test
     public void getUrls4() {
         System.out.println();
         System.out.println();
@@ -38,14 +76,13 @@ public class UrlJavaTest {
         for (Object o : parseArray) {
             JSONObject url = (JSONObject) o;
             // UPDATE `risk_text`  SET text_info  = 'https:' WHERE `text_type` = 'DISCLAIMERS_TEMPLATE'  AND `insurance_company` = 'HQINS'  AND risk_code =  '11010';
-            System.out.print("UPDATE `risk_text`  SET text_info  = '" + url.get("innerUrl") + "' WHERE `text_type` = 'DISCLAIMERS_TEMPLATE'  AND `insurance_company` = 'HQINS'  AND risk_code =  '" + url.get("originalFileName").toString().replace(".pdf","") + "';");
+            System.out.print("UPDATE `risk_text`  SET text_info  = '" + url.get("innerUrl") + "' WHERE `text_type` = 'DISCLAIMERS_TEMPLATE'  AND `insurance_company` = 'HQINS'  AND risk_code =  '" + url.get("originalFileName").toString().replace(".pdf", "") + "';");
             System.out.println();
 
         }
         System.out.println();
         System.out.println();
     }
-
 
 
     @Test

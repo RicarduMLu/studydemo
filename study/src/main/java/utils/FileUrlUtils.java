@@ -10,6 +10,7 @@ public final class FileUrlUtils {
         JSONObject data = (JSONObject) jsonObject.get("data");
         return JSON.parseArray(JSON.toJSONString(data.get("fileUrlList")));
     }
+
     public static void printUrls(String allUrlJson) {
         FileUrlUtils.printUrlsByArray(FileUrlUtils.getUrl(allUrlJson));
     }
@@ -37,6 +38,29 @@ public final class FileUrlUtils {
         System.out.println();
         System.out.println();
     }
+
+    public static void printUrlsAndNameByArray(JSONArray array) {
+        FileUrlUtils.printUrlsAndNameByArray(array, false);
+    }
+
+    public static void printUrlsAndNameByArray(JSONArray array, boolean innerFlag) {
+        System.out.println();
+        System.out.println();
+        for (int i = 0; i < array.size(); i++) {
+            Object fileUrlList = array.get(i);
+            JSONObject url = (JSONObject) fileUrlList;
+            if (innerFlag) {
+                System.out.println(url.get("innerUrl"));
+            } else {
+                System.out.println(url.get("outerUrl"));
+            }
+            System.out.println(url.get("originalFileName"));
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+    }
+
     public static void printUrlsTogether(String allUrlJson) {
         FileUrlUtils.printUrlsTogetherByArray(FileUrlUtils.getUrl(allUrlJson));
     }
