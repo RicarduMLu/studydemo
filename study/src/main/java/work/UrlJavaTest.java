@@ -22,11 +22,17 @@ public class UrlJavaTest {
 //        System.out.println(JSON.toJSONString(objectObjectHashMap));
 
 
+        FileUrlUtils.printUrlsTogether(TestConstants.免责14090);
 //        FileUrlUtils.printUrlsTogether(TestConstants.保险条款15180);
 //        FileUrlUtils.printUrlsTogether(TestConstants.保险条款15200);
 //        FileUrlUtils.printUrlsTogether(TestConstants.保险条款15210);
 //        FileUrlUtils.printUrlsTogether(TestConstants.保险条款17070);
-        FileUrlUtils.printUrlsTogether(TestConstants.保险条款14150);
+//        FileUrlUtils.printUrlsTogether(TestConstants.免责声明14190);
+//        FileUrlUtils.printUrlsTogether(TestConstants.保险条款14190);
+//        FileUrlUtils.printUrlsTogether(TestConstants.免责声明18030);
+//        FileUrlUtils.printUrlsTogether(TestConstants.保险条款18030);
+//        FileUrlUtils.printUrlsTogether(TestConstants.录音录像客户问答内容确认书);
+//        FileUrlUtils.printUrlsTogether(TestConstants.条款16480);
 //        FileUrlUtils.printUrls(TestConstants.BANNER图片组11140);
     }
 

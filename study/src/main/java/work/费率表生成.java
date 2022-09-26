@@ -179,7 +179,7 @@ public class 费率表生成 {
             "  `is_insurance_expiry` bit(1) NOT NULL COMMENT '保险期限是否为岁满期（如保至60岁，1为是，0为否）',\n" +
             "  `is_pay_expiry` bit(1) NOT NULL COMMENT '交费期限是否为岁满期（如交至60岁，1为是，0为否）',\n" +
             "  `annuity_age` int(8) NOT NULL COMMENT '养老年金领取年龄',\n" +
-            "  `annuity_guaranteed_period` int(8) NOT NULL COMMENT '养老年金保障领取期间值',\n" +
+            "  `annuity_guaranteed_period` int(8) NOT NULL COMMENT '养老年金保证领取期间值',\n" +
             "  `age` int(8) NOT NULL COMMENT '年龄',\n" +
             "  `year` int(8) NOT NULL COMMENT '保单年度',\n" +
             "  `premium_rate` decimal(16,6) NOT NULL COMMENT '保费费率',\n" +
@@ -205,7 +205,7 @@ public class 费率表生成 {
 
 
     //            "  `annuity_age` int(8) NOT NULL COMMENT '养老年金领取年龄',
-    //            "  `annuity_guaranteed_period` int(8) NOT NULL COMMENT '养老年金保障领取期间值',
+    //            "  `annuity_guaranteed_period` int(8) NOT NULL COMMENT '养老年金保证领取期间值',
     private String dbSql(String coreDbSqlLine) {
         if (coreDbSqlLine.contains("CREATE TABLE")) {
             return coreDbSqlLine + "\n  `id` bigint(32) NOT NULL AUTO_INCREMENT COMMENT '物理ID',";
