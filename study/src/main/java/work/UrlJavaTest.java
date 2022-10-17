@@ -38,13 +38,18 @@ public class UrlJavaTest {
 
     @Test
     public void getUrls5() {
-        JSONArray parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置产品说明书0921);
+        //提供给双录
+//        JSONArray parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置产品说明书0921);
+//        printUrlsAndNameByArray(parseArray, false);
+//        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置人身保险投保提示书0921);
+//        printUrlsAndNameByArray(parseArray, false);
+//        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置免责声明0921);
+//        printUrlsAndNameByArray(parseArray, false);
+//        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置条款0921);
+//        printUrlsAndNameByArray(parseArray, false);
+        JSONArray  parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置免责声明1010);
         printUrlsAndNameByArray(parseArray, false);
-        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置人身保险投保提示书0921);
-        printUrlsAndNameByArray(parseArray, false);
-        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置免责声明0921);
-        printUrlsAndNameByArray(parseArray, false);
-        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置条款0921);
+        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置条款1010);
         printUrlsAndNameByArray(parseArray, false);
 
 

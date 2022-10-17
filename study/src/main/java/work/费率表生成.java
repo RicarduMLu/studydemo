@@ -43,7 +43,7 @@ public class 费率表生成 {
                 }
                 bw.write(sqlStr
 //                        .replace(" `rt_18030` ", "`hqins_insurance_goods_prd`.`rate_hq_18030`")
-                                .replace(" `rt_18030` ", "`rate_hq_18030`")
+                                .replace(" `rt_18030` ", "`hqins_insurance_goods_prd`.`rate_hq_18030`")
                                 .replace("'18030',", (id++) + ",18030,'ID8030',")
                                 .replace(" 'Y', 'N',", "true,false,")
                                 .replace(" 'N', 'Y',", "false,true,")
@@ -107,7 +107,7 @@ public class 费率表生成 {
 
 
     @Test
-    public void csv() {
+    public void csv14190() {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(费率表保存路径 + "\\14190.sql"));
             CsvReader reader = new CsvReader(费率表14190, ',', StandardCharsets.UTF_8);
@@ -123,9 +123,9 @@ public class 费率表生成 {
                     continue;
                 }
                 if (StringUtils.isEmpty(values[2])) {
-                    break;
+                    continue;
                 }
-                String insert = "INSERT INTO `rate_hq_14190` VALUES ("
+                String insert = "INSERT INTO `hqins_insurance_goods_prd`.`rate_hq_14190` VALUES ("
                         + (id++) + ","   //`id`
                         + "14190,"     //`risk_code`
                         + "'ID4190',"    //`duty_code`
