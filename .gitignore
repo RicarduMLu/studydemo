@@ -4,6 +4,7 @@
 */target/
 study/target/study-1.0-SNAPSHOT.jar
 study/target/
+study/*.iml
 *.iml
 */*.iml
 *.sql
