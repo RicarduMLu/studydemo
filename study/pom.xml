@@ -76,9 +76,15 @@
         <kotlin.version>1.4.10</kotlin.version>
         <nacos.version>2.0.1</nacos.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <com.belerweb.version>2.5.1</com.belerweb.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>${com.belerweb.version}</version>
+        </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>

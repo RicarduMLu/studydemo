@@ -32,6 +32,10 @@ public class LrcTest {
     public void lrc05() {
         LrcUtils.lrc(Faded, -500);
     }
+    @Test
+    public void lrc07() {
+        LrcUtils.lrc(hateuloveu, +68000);
+    }
   @Test
     public void lrc06() {
         LrcUtils.lrc(

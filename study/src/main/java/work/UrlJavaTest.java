@@ -47,9 +47,12 @@ public class UrlJavaTest {
 //        printUrlsAndNameByArray(parseArray, false);
 //        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置条款0921);
 //        printUrlsAndNameByArray(parseArray, false);
-        JSONArray  parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置免责声明1010);
+//        JSONArray  parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置免责声明1010);
+//        printUrlsAndNameByArray(parseArray, false);
+        JSONArray  parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置免责声明1019);
         printUrlsAndNameByArray(parseArray, false);
-        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置条款1010);
+//        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置条款1010);
+        parseArray = FileUrlUtils.getUrl(TestConstants.get双录配置条款1019);
         printUrlsAndNameByArray(parseArray, false);
 
 

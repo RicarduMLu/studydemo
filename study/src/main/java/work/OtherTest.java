@@ -17,6 +17,164 @@ public class OtherTest {
 
 
     @Test
+    public void getSql2() {
+        String sql1 = "INSERT INTO `goods_content_info` (`goods_code`, `risk_code`, `is_main`, `main_code`, `page_type`, `function_type`, `content_type`, `content_show_type`, `content_input_item`, `content_silent_display`, `content_scope`, `content_postfix`, `is_must`, `content_sort` ) VALUES \n" +
+                "( 'A1106001', '', b'0', '', 'A_APPLICANT', 'A_PERSONAL_INFORMATION', 'A_PERSONAL_INFORM_TAX', 'DROP_DOWN', '纳税身份信息', NULL, '', NULL, b'1', 35);";
+        String sql2 = "INSERT INTO `goods_content_info` ( `goods_code`, `risk_code`, `is_main`, `main_code`, `page_type`, `function_type`, `content_type`, `content_show_type`, `content_input_item`, `content_silent_display`, `content_scope`, `content_postfix`, `is_must`, `content_sort`) VALUES \n" +
+                "( 'A1106001', '', b'0', '', 'A_APPLICANT', 'A_PERSONAL_INFORMATION', 'A_PERSONAL_INFORM_OTHER_IMAGE', 'FILE_UPLOADER', '其他影像(可选)', NULL, '', NULL, b'0', 56);";
+        String sql3 = "INSERT INTO `goods_content_info` ( `goods_code`, `risk_code`, `is_main`, `main_code`, `page_type`, `function_type`, `content_type`, `content_show_type`, `content_input_item`, `content_silent_display`, `content_scope`, `content_postfix`, `is_must`, `content_sort`) VALUES \n" +
+                " ( 'A1106001', '', b'0', '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_CASE_IMAGE', 'FILE_UPLOADER', '病例影像', NULL, '', NULL, b'1', 87),\n" +
+                " ( 'A1106001', '', b'0', '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_THROWBACK_IMAGE', 'FILE_UPLOADER', '隔代影像', NULL, '', NULL, b'1', 88),\n" +
+                " ( 'A1106001', '', b'0', '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_OTHER_IMAGE', 'FILE_UPLOADER', '其他影像', NULL, '', NULL, b'1', 89);";
+
+        System.out.println();
+        System.out.println();
+        String 长期险CODE = "A1101001\n" +
+                "A1103001\n" +
+                "A1106001\n" +
+                "A1107001\n" +
+                "A1108001\n" +
+                "A1108002\n" +
+                "A1109001\n" +
+                "A1110001\n" +
+                "A1113001\n" +
+                "A1114001\n" +
+                "A1114002\n" +
+                "A1115001\n" +
+                "A1116001\n" +
+                "A1117001\n" +
+                "A1118001\n" +
+                "A1203001\n" +
+                "A1302001\n" +
+                "A1306001\n" +
+                "A1404001\n" +
+                "A1408001\n" +
+                "A1409001\n" +
+                "A1409002\n" +
+                "A1409003\n" +
+                "A1410001\n" +
+                "A1412001\n" +
+                "A1415001\n" +
+                "A1417001\n" +
+                "A1418001\n" +
+                "A1419001\n" +
+                "A1646001\n" +
+                "A1650001\n" +
+                "A165201653001\n" +
+                "A1653001\n" +
+                "A1654001\n" +
+                "A1655001\n" +
+                "A1659001\n" +
+                "A1729001";
+        System.out.println("--  只有长险可以+纳税");
+        for (String goods : 长期险CODE.split("\n")) {
+            System.out.println(sql1.replace("A1106001", goods));
+        }
+
+        String 全量Code = "A1101001\n" +
+                "A1103001\n" +
+                "A1106001\n" +
+                "A1107001\n" +
+                "A1108001\n" +
+                "A1108002\n" +
+                "A1109001\n" +
+                "A1110001\n" +
+                "A1113001\n" +
+                "A1114001\n" +
+                "A1114002\n" +
+                "A1115001\n" +
+                "A1116001\n" +
+                "A1117001\n" +
+                "A1118001\n" +
+                "A1203001\n" +
+                "A1302001\n" +
+                "A1306001\n" +
+                "A1404001\n" +
+                "A1408001\n" +
+                "A1409001\n" +
+                "A1409002\n" +
+                "A1409003\n" +
+                "A1410001\n" +
+                "A1412001\n" +
+                "A1415001\n" +
+                "A1417001\n" +
+                "A1418001\n" +
+                "A1419001\n" +
+                "A1518001\n" +
+                "A1646001\n" +
+                "A1650001\n" +
+                "A165201653001\n" +
+                "A1653001\n" +
+                "A1654001\n" +
+                "A1655001\n" +
+                "A1659001\n" +
+                "A1714001\n" +
+                "A1720001\n" +
+                "A1729001\n" +
+                "A3401001\n" +
+                "A3404001";
+        System.out.println("--  增加投保人其他影像\n");
+        for (String goods : 全量Code.split("\n")) {
+            System.out.println(sql2.replace("A1106001", goods));
+        }
+        String 存在祖孙的CODE = "A1101001\n" +
+                "A1103001\n" +
+                "A1106001\n" +
+                "A1107001\n" +
+                "A1108001\n" +
+                "A1108002\n" +
+                "A1109001\n" +
+                "A1110001\n" +
+                "A1113001\n" +
+                "A1114001\n" +
+                "A1114002\n" +
+                "A1115001\n" +
+                "A1116001\n" +
+                "A1117001\n" +
+                "A1118001\n" +
+                "A1203001\n" +
+                "A1302001\n" +
+                "A1306001\n" +
+                "A1404001\n" +
+                "A1408001\n" +
+                "A1409001\n" +
+                "A1409002\n" +
+                "A1409003\n" +
+                "A1410001\n" +
+                "A1412001\n" +
+                "A1415001\n" +
+                "A1417001\n" +
+                "A1419001\n" +
+                "A1518001\n" +
+                "A1646001\n" +
+                "A1650001\n" +
+                "A165201653001\n" +
+                "A1653001\n" +
+                "A1654001\n" +
+                "A1655001\n" +
+                "A1659001\n" +
+                "A1714001\n" +
+                "A1720001\n" +
+                "A3401001\n" +
+                "A3404001";
+        for (String goods : 全量Code.split("\n")) {
+            if (存在祖孙的CODE.contains(goods)) {
+                System.out.println(sql3.replace("A1106001", goods));
+            }else {
+                // 不增加隔代内容
+                System.out.println(sql3
+                        .replace(" ( 'A1106001', '', b'0', '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_THROWBACK_IMAGE', 'FILE_UPLOADER', '隔代影像', NULL, '', NULL, b'1', 88),","")
+                        .replace("A1106001", goods));
+
+            }
+        }
+
+        System.out.println();
+        System.out.println();
+
+    }
+
+    @Test
     public void getUrls2222() {
         for (int i = 1; i < 53; i++) {
             System.out.println(".replace(\"\\\\\\\"" + i + "\\\\\\\":\\\\\\\"" + i + "年\\\\\\\"\",\"\\\\\\\"" + i + "_YEAR\\\\\\\":\\\\\\\"" + i + "年\\\\\\\"\")");
@@ -34,7 +192,7 @@ public class OtherTest {
         System.out.println(".replace(\"\\\\\\\"" + 60 + "\\\\\\\":\\\\\\\"至60周岁\\\\\\\"\",\"\\\\\\\"" + 60 + "_AGE\\\\\\\":\\\\\\\"至60周岁\\\\\\\"\")");
         System.out.println(".replace(\"\\\\\\\"" + 65 + "\\\\\\\":\\\\\\\"至65周岁\\\\\\\"\",\"\\\\\\\"" + 65 + "_AGE\\\\\\\":\\\\\\\"至65周岁\\\\\\\"\")");
         System.out.println(".replace(\"\\\\\\\"" + 70 + "\\\\\\\":\\\\\\\"至70周岁\\\\\\\"\",\"\\\\\\\"" + 70 + "_AGE\\\\\\\":\\\\\\\"至70周岁\\\\\\\"\")");
-        System.out.println(".replace(\"\\\\\\\"" + 105 + "\\\\\\\":\\\\\\\"至105周岁\\\\\\\"\",\"\\\\\\\"" + 105+ "_AGE\\\\\\\":\\\\\\\"至105周岁\\\\\\\"\")");
+        System.out.println(".replace(\"\\\\\\\"" + 105 + "\\\\\\\":\\\\\\\"至105周岁\\\\\\\"\",\"\\\\\\\"" + 105 + "_AGE\\\\\\\":\\\\\\\"至105周岁\\\\\\\"\")");
 
     }
 
@@ -142,7 +300,8 @@ public class OtherTest {
         System.out.println();
 
     }
- @Test
+
+    @Test
     public void getInsuredPeriod() {
 
         System.out.println();
@@ -218,19 +377,19 @@ public class OtherTest {
                     .replace("\\\"10\\\":\\\"10月\\\"", "\\\"10_MONTH\\\":\\\"10月\\\"")
                     .replace("\\\"11\\\":\\\"11月\\\"", "\\\"11_MONTH\\\":\\\"11月\\\"")
                     .replace("\\\"12\\\":\\\"12月\\\"", "\\\"12_MONTH\\\":\\\"12月\\\"")
-                    .replace("\\\"1\\\":\\\"1天\\\"","\\\"1_DAY\\\":\\\"1天\\\"")
-                    .replace("\\\"2\\\":\\\"2天\\\"","\\\"2_DAY\\\":\\\"2天\\\"")
-                    .replace("\\\"3\\\":\\\"3天\\\"","\\\"3_DAY\\\":\\\"3天\\\"")
-                    .replace("\\\"4\\\":\\\"4天\\\"","\\\"4_DAY\\\":\\\"4天\\\"")
-                    .replace("\\\"5\\\":\\\"5天\\\"","\\\"5_DAY\\\":\\\"5天\\\"")
-                    .replace("\\\"6\\\":\\\"6天\\\"","\\\"6_DAY\\\":\\\"6天\\\"")
-                    .replace("\\\"7\\\":\\\"7天\\\"","\\\"7_DAY\\\":\\\"7天\\\"")
-                    .replace("\\\"55\\\":\\\"至55周岁\\\"","\\\"55_AGE\\\":\\\"至55周岁\\\"")
-                    .replace("\\\"60\\\":\\\"至60周岁\\\"","\\\"60_AGE\\\":\\\"至60周岁\\\"")
-                    .replace("\\\"65\\\":\\\"至65周岁\\\"","\\\"65_AGE\\\":\\\"至65周岁\\\"")
-                    .replace("\\\"70\\\":\\\"至70周岁\\\"","\\\"70_AGE\\\":\\\"至70周岁\\\"")
-                    .replace("\\\"70\\\":\\\"保至70岁\\\"","\\\"70_AGE\\\":\\\"至70周岁\\\"")
-                    .replace("\\\"105\\\":\\\"至105周岁\\\"","\\\"105_AGE\\\":\\\"至105周岁\\\"")
+                    .replace("\\\"1\\\":\\\"1天\\\"", "\\\"1_DAY\\\":\\\"1天\\\"")
+                    .replace("\\\"2\\\":\\\"2天\\\"", "\\\"2_DAY\\\":\\\"2天\\\"")
+                    .replace("\\\"3\\\":\\\"3天\\\"", "\\\"3_DAY\\\":\\\"3天\\\"")
+                    .replace("\\\"4\\\":\\\"4天\\\"", "\\\"4_DAY\\\":\\\"4天\\\"")
+                    .replace("\\\"5\\\":\\\"5天\\\"", "\\\"5_DAY\\\":\\\"5天\\\"")
+                    .replace("\\\"6\\\":\\\"6天\\\"", "\\\"6_DAY\\\":\\\"6天\\\"")
+                    .replace("\\\"7\\\":\\\"7天\\\"", "\\\"7_DAY\\\":\\\"7天\\\"")
+                    .replace("\\\"55\\\":\\\"至55周岁\\\"", "\\\"55_AGE\\\":\\\"至55周岁\\\"")
+                    .replace("\\\"60\\\":\\\"至60周岁\\\"", "\\\"60_AGE\\\":\\\"至60周岁\\\"")
+                    .replace("\\\"65\\\":\\\"至65周岁\\\"", "\\\"65_AGE\\\":\\\"至65周岁\\\"")
+                    .replace("\\\"70\\\":\\\"至70周岁\\\"", "\\\"70_AGE\\\":\\\"至70周岁\\\"")
+                    .replace("\\\"70\\\":\\\"保至70岁\\\"", "\\\"70_AGE\\\":\\\"至70周岁\\\"")
+                    .replace("\\\"105\\\":\\\"至105周岁\\\"", "\\\"105_AGE\\\":\\\"至105周岁\\\"")
                     .replace("\\\"1000\\\"", "\\\"1000_LIFELONG\\\"");
 
             System.out.print("'ruleScope' ".replace("ruleScope", ruleScope));
@@ -238,13 +397,13 @@ public class OtherTest {
             String def = null;
             if ("1000".equals(split[4])) {
                 def = "_LIFELONG";
-            } else if (Integer.parseInt( split[4] )>30) {
+            } else if (Integer.parseInt(split[4]) > 30) {
                 def = "_AGE";
-            }else if (split[3].contains("年")) {
+            } else if (split[3].contains("年")) {
                 def = "_YEAR";
             } else if (split[3].contains("月")) {
                 def = "_MONTH";
-            }else if (split[3].contains("天")) {
+            } else if (split[3].contains("天")) {
                 def = "_DAY";
             }
             System.out.print("'defaultInfo' ".replace("defaultInfo", split[4] + def));
@@ -261,7 +420,6 @@ public class OtherTest {
         System.out.println();
 
     }
-
 
 
     @Test

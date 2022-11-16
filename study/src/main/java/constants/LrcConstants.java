@@ -3,6 +3,16 @@ package constants;
 public class LrcConstants {
 
     public static
+    String hateuloveu =
+                            "[02:10.55]I hate you, I love you\n" +
+                            "[02:13.02]I hate that I love you\n" +
+                            "[02:15.44]Don't want to, but I can't put\n" +
+                            "[02:18.34]Nobody else above you\n" +
+                            "[02:20.76]I hate you, I love you\n" +
+                            "[02:23.25]I hate that I want you\n" +
+                            "[02:25.97]You want her, you need her\n" +
+                            "[02:28.79]And I'll never be her";
+    public static
     String Slowly =
             "[00:00.00]Let Me Down Slowly\n" +
                     "[00:06.12]This night is cold in the kingdom 夜晚寒意由此蔓延\n" +
