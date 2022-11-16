@@ -11,12 +11,12 @@ public class 开门红活动 {
             "CODES\n" +
             ") and activity_code = 'open_new_year_2023' ; \n";
     private static String 关联 =
-            "INSERT INTO goods_activity_relation(goods_code,activity_code,special_activity_config_info,is_open,sort)VALUES" +
-                    "('GOODSCODE','open_new_year_2023',NULL,1,NULL);\n";
+            "INSERT INTO goods_activity_relation(goods_code,activity_code,special_activity_config_info,is_open)VALUES" +
+                    "('GOODSCODE','open_new_year_2023',NULL,true);\n";
 
     private static String 渠道关联 =
-            "INSERT INTO goods_activity_channel_relation(goods_code,activity_code,special_activity_config_info,owner_code,is_white,is_black,start_time,end_time,sort) VALUES" +
-                    "('GOODSCODE','open_new_year_2023',NULL,'ORGCODE',1,0,'START','END');";
+            "INSERT INTO goods_activity_channel_relation(goods_code,activity_code,special_activity_config_info,owner_code,is_white,is_black,start_time,end_time) VALUES" +
+                    "('GOODSCODE','open_new_year_2023',NULL,'ORGCODE',true,false,'START','END');";
 
     @Test
     public void 生成() {
