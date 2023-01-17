@@ -175,9 +175,9 @@ public class 费率表生成 {
         } catch (FileNotFoundException e) {
         }
         String 表SQL = this.表16600;
-        String 险种 = "14200";
+        String 险种 = "16600";
         String 表名 = "`rate_hq_" + 险种 + "`";
-        int 跳过行 = 2;
+        int 跳过行 = 3;
         try {
             String 环境 = "dat";
             BufferedWriter bw = new BufferedWriter(new FileWriter(费率表保存路径 + "\\" + 险种 + "_" + 环境 + ".sql"));
@@ -195,35 +195,53 @@ public class 费率表生成 {
                 if (StringUtils.isEmpty(values[2])) {
                     continue;
                 }
+                String dutyCode;
+                //ID6600,基本责任
+                //ID6601,基本责任+特定重度恶性肿瘤额外保险金
+                //ID6602,基本责任+重度恶性肿瘤加油包保险金
+                //ID6603,基本责任+特定重度恶性肿瘤额外保险金+重度恶性肿瘤加油包保险金
+                if ("否".equals(values[26])) {
+                    if ("否".equals(values[27])) {
+                        dutyCode = "ID6600";
+                    } else {
+                        dutyCode = "ID6601";
+                    }
+                } else {
+                    if ("否".equals(values[27])) {
+                        dutyCode = "ID6602";
+                    } else {
+                        dutyCode = "ID6603";
+                    }
+                }
                 String insert = "INSERT INTO `hqins_insurance_goods_" + 环境 + "`." + 表名 + " VALUES ("
                         + (id++) + ","   //`id`
                         + values[0] + ","    //`risk_code`
-                        + "'" + values[1] + "',"   //`duty_code`
-                        + values[2] + ","  //`amount_rate`
-                        + values[3] + ","  // `gender`
-                        + values[4] + ","  //`insurance_period`
-                        + values[5] + ","  //`pay_period`
-                        + ("Y".equals(values[6]) ? "true" : "false") + ","  //`is_insurance_expiry`
-                        + ("Y".equals(values[7]) ? "true" : "false") + ","  // `is_pay_expiry`
-                        + values[8] + "," //`age`
-                        + values[9] + "," //`year`
-                        + values[10].replace(",", "") + ","  //`premium_rate`
-                        + values[11].replace(",", "") + ","  //`premium_cv`
-                        + values[12].replace(",", "") + ","  // `begin_cv`
-                        + values[13].replace(",", "") + ","  //`enb_cv`
-                        + values[14].replace(",", "") + ","  //`begsur`
-                        + values[15].replace(",", "") + ","  //`endsur`
-                        + values[16].replace(",", "") + ","  //`begben`
-                        + values[17].replace(",", "") + ","  // `endben`
-                        + values[18].replace(",", "") + ","  //`prem_val`
-                        + values[19].replace(",", "") + ","  // `begre`
-                        + values[20].replace(",", "") + ","  //`endre`
-                        + values[21].replace(",", "") + ","  // `hig_div`
-                        + values[22].replace(",", "") + ","  //`avg_div`
-                        + values[23].replace(",", "") + ","  //`low_div`
-                        + values[24].replace(",", "") + ","  //`hig_acc`
-                        + values[25].replace(",", "") + ","  // `avg_acc`
-                        + values[26].replace(",", "") + ""  //`low_acc`
+                        + "'" + dutyCode + "',"   //`duty_code`
+                        + values[1] + ","  //`amount_rate`
+                        + values[2] + ","  // `gender`
+                        + values[3] + ","  //`insurance_period`
+                        + values[4] + ","  //`pay_period`
+                        + ("Y".equals(values[5]) ? "true" : "false") + ","  //`is_insurance_expiry`
+                        + ("Y".equals(values[6]) ? "true" : "false") + ","  // `is_pay_expiry`
+                        + values[7] + "," //`age`
+                        + values[8] + "," //`year`
+                        + values[9].replace(",", "") + ","  //`premium_rate`
+                        + values[10].replace(",", "") + ","  //`premium_cv`
+                        + values[11].replace(",", "") + ","  // `begin_cv`
+                        + values[12].replace(",", "") + ","  //`enb_cv`
+                        + values[13].replace(",", "") + ","  //`begsur`
+                        + values[14].replace(",", "") + ","  //`endsur`
+                        + values[15].replace(",", "") + ","  //`begben`
+                        + values[16].replace(",", "") + ","  // `endben`
+                        + values[17].replace(",", "") + ","  //`prem_val`
+                        + values[18].replace(",", "") + ","  // `begre`
+                        + values[19].replace(",", "") + ","  //`endre`
+                        + values[20].replace(",", "") + ","  // `hig_div`
+                        + values[21].replace(",", "") + ","  //`avg_div`
+                        + values[22].replace(",", "") + ","  //`low_div`
+                        + values[23].replace(",", "") + ","  //`hig_acc`
+                        + values[24].replace(",", "") + ","  // `avg_acc`
+                        + values[25].replace(",", "") + ""  //`low_acc`
                         + ");";
                 bw.newLine();
                 bw.write(insert);
@@ -296,7 +314,7 @@ public class 费率表生成 {
                         + ("Y".equals(values[5]) ? "true" : "false") + ","  //`is_insurance_expiry`
                         + ("Y".equals(values[6]) ? "true" : "false") + ","  // `is_pay_expiry`
                         + values[7] + "," //`get_year`
-                        +  " 'YEAR'," //`get_year_flag`
+                        + " 'YEAR'," //`get_year_flag`
                         + values[8] + "," //`age`
                         + values[9] + "," //`year`
                         + values[10].replace(",", "") + ","  //`premium_rate`
