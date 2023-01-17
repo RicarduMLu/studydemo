@@ -9,6 +9,10 @@ public class LrcTest {
 
 
     @Test
+    public void lrc00() {
+        LrcUtils.lrc(夜航星, -500);
+    }
+    @Test
     public void lrc01() {
         LrcUtils.lrc(飞向别人的床, -500);
     }

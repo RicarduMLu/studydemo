@@ -19,29 +19,30 @@ public class OtherTest {
     @Test
     public void getSql2() {
         String sql1 = "INSERT INTO `goods_content_info` (`goods_code`, `risk_code`, `is_main`, `main_code`, `page_type`, `function_type`, `content_type`, `content_show_type`, `content_input_item`, `content_silent_display`, `content_scope`, `content_postfix`, `is_must`, `content_sort` ) VALUES \n" +
-                "( 'A1106001', '', b'0', '', 'A_APPLICANT', 'A_PERSONAL_INFORMATION', 'A_PERSONAL_INFORM_TAX', 'DROP_DOWN', '纳税身份信息', NULL, '', NULL, b'1', 35);";
+                "( 'A1106001', '', false, '', 'A_APPLICANT', 'A_PERSONAL_INFORMATION', 'A_PERSONAL_INFORM_TAX', 'DROP_DOWN', '纳税身份信息', NULL, '', NULL, true, 35);";
         String sql2 = "INSERT INTO `goods_content_info` ( `goods_code`, `risk_code`, `is_main`, `main_code`, `page_type`, `function_type`, `content_type`, `content_show_type`, `content_input_item`, `content_silent_display`, `content_scope`, `content_postfix`, `is_must`, `content_sort`) VALUES \n" +
-                "( 'A1106001', '', b'0', '', 'A_APPLICANT', 'A_PERSONAL_INFORMATION', 'A_PERSONAL_INFORM_OTHER_IMAGE', 'FILE_UPLOADER', '其他影像(可选)', NULL, '', NULL, b'0', 56);";
+                "( 'A1106001', '', false, '', 'A_APPLICANT', 'A_PERSONAL_INFORMATION', 'A_PERSONAL_INFORM_OTHER_IMAGE', 'FILE_UPLOADER', '其他影像(可选)', NULL, '', NULL, false, 56);";
         String sql3 = "INSERT INTO `goods_content_info` ( `goods_code`, `risk_code`, `is_main`, `main_code`, `page_type`, `function_type`, `content_type`, `content_show_type`, `content_input_item`, `content_silent_display`, `content_scope`, `content_postfix`, `is_must`, `content_sort`) VALUES \n" +
-                " ( 'A1106001', '', b'0', '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_CASE_IMAGE', 'FILE_UPLOADER', '病例影像', NULL, '', NULL, b'1', 87),\n" +
-                " ( 'A1106001', '', b'0', '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_THROWBACK_IMAGE', 'FILE_UPLOADER', '隔代影像', NULL, '', NULL, b'1', 88),\n" +
-                " ( 'A1106001', '', b'0', '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_OTHER_IMAGE', 'FILE_UPLOADER', '其他影像', NULL, '', NULL, b'1', 89);";
-
+                " ( 'A1106001', '', false, '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_CASE_IMAGE', 'FILE_UPLOADER', '病例影像(可选)', NULL, '', NULL, true, 87),\n" +
+                " ( 'A1106001', '', false, '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_THROWBACK_IMAGE', 'FILE_UPLOADER', '隔代影像(可选)', NULL, '', NULL, true, 88),\n" +
+                " ( 'A1106001', '', false, '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_OTHER_IMAGE', 'FILE_UPLOADER', '其他影像(可选)', NULL, '', NULL, true, 89);";
+        String sql4 = "INSERT INTO `goods_rule` ( `goods_code`, `risk_code`, `plan_code`, `rule_type`, `rule_control_type`, `rule_scope`, `default_info`, `is_pass`, `sort`) VALUES\n" +
+                " ( 'A1106001', '', '', 'APPLICANT_TAX', 'ENUMERATION', '{\\\"scopeMap\\\":{\\\"TAX_CHINA_ONLY\\\":\\\"仅为中国税收居民\\\",\\\"TAX_NON_CHINA_ONLY\\\":\\\"仅为非中国税收居民\\\",\\\"TAX_BOTH_CHINA_AND_OTHER_COUNTRIES\\\":\\\"既是中国税收居民又是其他国家（地区）税收居民\\\"}}', NULL, b'0', NULL);";
         System.out.println();
         System.out.println();
         String 长期险CODE = "A1101001\n" +
                 "A1103001\n" +
                 "A1106001\n" +
+                "A1106002\n" +
+                "A1106003\n" +
                 "A1107001\n" +
                 "A1108001\n" +
                 "A1108002\n" +
                 "A1109001\n" +
                 "A1110001\n" +
-                "A1113001\n" +
                 "A1114001\n" +
                 "A1114002\n" +
                 "A1115001\n" +
-                "A1116001\n" +
                 "A1117001\n" +
                 "A1118001\n" +
                 "A1203001\n" +
@@ -64,26 +65,31 @@ public class OtherTest {
                 "A1653001\n" +
                 "A1654001\n" +
                 "A1655001\n" +
-                "A1659001\n" +
-                "A1729001";
+                "A1659001";
         System.out.println("--  只有长险可以+纳税");
         for (String goods : 长期险CODE.split("\n")) {
             System.out.println(sql1.replace("A1106001", goods));
+        }
+        System.out.println();
+        System.out.println("--  只有长险可以+纳税");
+
+        for (String goods : 长期险CODE.split("\n")) {
+            System.out.println(sql4.replace("A1106001", goods));
         }
 
         String 全量Code = "A1101001\n" +
                 "A1103001\n" +
                 "A1106001\n" +
+                "A1106002\n" +
+                "A1106003\n" +
                 "A1107001\n" +
                 "A1108001\n" +
                 "A1108002\n" +
                 "A1109001\n" +
                 "A1110001\n" +
-                "A1113001\n" +
                 "A1114001\n" +
                 "A1114002\n" +
                 "A1115001\n" +
-                "A1116001\n" +
                 "A1117001\n" +
                 "A1118001\n" +
                 "A1203001\n" +
@@ -110,7 +116,6 @@ public class OtherTest {
                 "A1659001\n" +
                 "A1714001\n" +
                 "A1720001\n" +
-                "A1729001\n" +
                 "A3401001\n" +
                 "A3404001";
         System.out.println("--  增加投保人其他影像\n");
@@ -120,16 +125,15 @@ public class OtherTest {
         String 存在祖孙的CODE = "A1101001\n" +
                 "A1103001\n" +
                 "A1106001\n" +
+                "A1106002\n" +
                 "A1107001\n" +
                 "A1108001\n" +
                 "A1108002\n" +
                 "A1109001\n" +
                 "A1110001\n" +
-                "A1113001\n" +
                 "A1114001\n" +
                 "A1114002\n" +
                 "A1115001\n" +
-                "A1116001\n" +
                 "A1117001\n" +
                 "A1118001\n" +
                 "A1203001\n" +
@@ -155,15 +159,14 @@ public class OtherTest {
                 "A1659001\n" +
                 "A1714001\n" +
                 "A1720001\n" +
-                "A3401001\n" +
-                "A3404001";
+                "A3401001";
         for (String goods : 全量Code.split("\n")) {
             if (存在祖孙的CODE.contains(goods)) {
                 System.out.println(sql3.replace("A1106001", goods));
             }else {
                 // 不增加隔代内容
                 System.out.println(sql3
-                        .replace(" ( 'A1106001', '', b'0', '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_THROWBACK_IMAGE', 'FILE_UPLOADER', '隔代影像', NULL, '', NULL, b'1', 88),","")
+                        .replace(" ( 'A1106001', '', false, '', 'A_RECOGNIZE', 'A_RECOGNIZE_INFORMATION', 'A_RECOGNIZE_INFORM_THROWBACK_IMAGE', 'FILE_UPLOADER', '隔代影像(可选)', NULL, '', NULL, true, 88),","")
                         .replace("A1106001", goods));
 
             }
