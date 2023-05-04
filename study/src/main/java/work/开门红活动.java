@@ -1,6 +1,7 @@
 package work;
 
 import com.google.common.collect.Lists;
+import constants.开门红Constants;
 import entity.ChannelPer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,6 +9,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.junit.Test;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -256,15 +260,16 @@ public class 开门红活动 {
                 "( 'gggggggggg', 'rrrrrrrr', '', " +
                 "'ppppppppp'," +
                 " 'ooooooo', " +
-                " 'PAY_FREQUENCY', 'ENUMERATION', '{\\\"scopeMap\\\":{\\\"SINGLE\\\":\\\"趸交\\\",\\\"ANNUAL\\\":\\\"年交\\\"}}', 'ANNUAL' );";
+//                " 'PAY_FREQUENCY', 'ENUMERATION', '{\\\"scopeMap\\\":{\\\"SINGLE\\\":\\\"趸交\\\",\\\"ANNUAL\\\":\\\"年交\\\"}}', 'ANNUAL' );";
+                " 'PAY_YEAR', 'ENUMERATION', '{\"scopeMap\":{\"3_YEAR\":\"3年\",\"5_YEAR\":\"5年\",\"15_YEAR\":\"15年\",\"20_YEAR\":\"20年\"}}}', '5' );";
 
-        Map<String, Map<String, String>> collect = Arrays.stream(明亚授权.split("\n")).map(s -> {
+        Map<String, Map<String, String>> collect = Arrays.stream(永达理授权.split("\n")).map(s -> {
             String[] split = s.split("\t");
             return ChannelPer.builder().goodsCode(split[0]).ownerOrgCode(split[1]).permissionId(split[2]).build();
         }).collect(Collectors.groupingBy(ChannelPer::getGoodsCode, Collectors.toMap(ChannelPer::getOwnerOrgCode, ChannelPer::getPermissionId, (key1, key2) -> key1)));
         System.out.println();
         System.out.println();
-        for (String org : 明亚渠道.split("\n")) {
+        for (String org : 永达理渠道.split("\n")) {
             Map<String, String> a1106002 = collect.get("A1106002");
             System.out.print(ruleChannel
                     .replace("gggggggggg", "A1106002")
@@ -277,15 +282,40 @@ public class 开门红活动 {
         }
         System.out.println();
         System.out.println();
-        for (String org : 明亚渠道.split("\n")) {
-            Map<String, String> a1409001 = collect.get("A1409001");
-            System.out.print(ruleChannel
-                    .replace("gggggggggg", "A1409001")
-                    .replace("rrrrrrrr", "14090")
-                    .replace("ppppppppp", a1409001.get(org))
-                    .replace("ooooooo", org)
-            );
-            System.out.println();
+//        for (String org : 明亚渠道.split("\n")) {
+//            Map<String, String> a1409001 = collect.get("A1409001");
+//            System.out.print(ruleChannel
+//                    .replace("gggggggggg", "A1409001")
+//                    .replace("rrrrrrrr", "14090")
+//                    .replace("ppppppppp", a1409001.get(org))
+//                    .replace("ooooooo", org)
+//            );
+//            System.out.println();
+//        }
+    }
+
+    @Test
+    public void 黑名单中兴() throws IOException {
+        String SQL = "INSERT INTO `hqins_insurance_goods_prd                                         `.`goods_activity_channel_relation` (`goods_code`,`activity_code`,`owner_code`, `is_white`,`is_black`) VALUES " +
+                "( 'gggg', 'open_new_year_2023','aaaaaaaaaa', b'0', b'1'    );";
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        BufferedWriter bw = new BufferedWriter(new FileWriter(  "F:\\File\\code\\studydemo\\study\\src\\main\\resources\\开门红黑名单.sql"));
+
+        for (String 中兴 : 开门红Constants.黑名单.split("\n")) {
+            for (String goods : 开门红Constants.全量商品.split("\n")) {
+                bw.write(SQL
+                        .replace("gggg",goods)
+                        .replace("aaaaaaaaaa",中兴)
+                );
+                bw.newLine();
+            }
         }
+        bw.flush();
+        bw.close();
+
+        System.out.println();
+        System.out.println();
     }
 }

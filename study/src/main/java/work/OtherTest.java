@@ -4,8 +4,10 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import constants.PeriodConstants;
 import constants.TestConstants;
+import entity.RiskSpecialShowConfig;
 import org.junit.Test;
 import utils.FileUrlUtils;
+import utils.JsonUtil;
 
 public class OtherTest {
     private static String nacos1 = "    PERSONAL_INFORMATION_PROCESSING_AUTHORIZATION: ";
@@ -14,6 +16,11 @@ public class OtherTest {
     private static String nacos3_1 = "    911201_SIZE_";
     private static String nacos4 = "    #个人信息处理授权协议 千里眼PDF版";
     private static String nacos4_2 = "    911201_PDF_";
+
+    public static void main(String[] args) {
+        String aaa = "{\"getAgeTitle\":\"祝寿金领取年龄\",\"liveGetModeTitle\":\"祝寿金领取频次\"} ";
+        JsonUtil.fromJSON(aaa, RiskSpecialShowConfig.class);
+    }
 
 
     @Test
